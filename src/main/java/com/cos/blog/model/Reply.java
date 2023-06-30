@@ -12,6 +12,8 @@ import javax.persistence.ManyToOne;
 
 import org.hibernate.annotations.CreationTimestamp;
 
+import com.cos.blog.dto.ReplySaveRequestDto;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -37,9 +39,11 @@ public class Reply {
 		
 		@ManyToOne
 		@JoinColumn(name="userId")
-		private User user;
+		private Users user;
 		
 		@CreationTimestamp
 		private Timestamp createDate;
 		
-}
+	}
+		
+

@@ -24,13 +24,13 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 @Entity
-public class User {
+public class Users {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Column(nullable=false,length=30)
+	@Column(nullable=false,length=100,unique = true)
 	private String username;
 	
 	@Column(nullable=false,length=100)
@@ -41,6 +41,8 @@ public class User {
 	
 	@Enumerated(EnumType.STRING)
 	private RoleType role;
+	
+	private String oauth;//kakao, google
 	
 	@CreationTimestamp
 	private Timestamp createDate;
